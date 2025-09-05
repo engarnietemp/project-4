@@ -10,11 +10,11 @@ INNER JOIN Notation n ON s.numstud = n.numstud;
 
 -- List of score, specifying for each the name and first name of the student who obtained it and the wording of the matter concerned
 
-SELECT n.score, s.name, s.firstname, m.wording
+SELECT DISTINCT n.score, s.name, s.firstname, m.wording
 FROM Student s
 INNER JOIN Notation n on s.numstud = n.numstud
 INNER JOIN Test t ON n.numtest = t.numtest
-INNER JOIN Matter m ON m.codemat = t.codemat
+INNER JOIN Matter m ON m.codemat = t.codemat;
 
 -- List of score greater than or equal to 10
 

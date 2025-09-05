@@ -1,6 +1,6 @@
-CREATE DATABASE project-4
+CREATE DATABASE `project-4`
 
-USE project-4
+USE `project-4`
 
 CREATE TABLE Matter (
     codemat CHAR(10),
