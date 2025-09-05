@@ -1,0 +1,39 @@
+CREATE DATABASE project-4
+
+USE project-4
+
+CREATE TABLE Matter (
+    codemat CHAR(10),
+    wording VARCHAR(50),
+    coef FLOAT,
+    PRIMARY KEY (codemat)
+);
+
+CREATE TABLE Student (
+    numstud INT AUTO_INCREMENT,
+    name VARCHAR(30),
+    firstname VARCHAR(30),
+    dateofbirth DATE,
+    street VARCHAR(50),
+    postalcod VARCHAR(5),
+    city VARCHAR(50),
+    PRIMARY KEY (numstud)
+);
+
+CREATE TABLE Test (
+    numtest INT AUTO_INCREMENT,
+    testdate DATE,
+    place VARCHAR(50),
+    codemat CHAR(10),
+    PRIMARY KEY (numtest),
+    FOREIGN KEY (codemat) REFERENCES Matter(codemat)
+);
+
+CREATE TABLE Notation (
+    numstud INT,
+    numtest INT,
+    score FLOAT,
+    PRIMARY KEY (numstud, numtest),
+    FOREIGN KEY (numstud) REFERENCES Student(numstud),
+    FOREIGN KEY (numtest) REFERENCES Test(numtest)
+);

@@ -1,0 +1,7 @@
+-- Wording and coefficient
+
+SELECT wording, coef * 100 AS percentage FROM Matter;
+
+-- Sum of coefficients of all subjects
+
+SELECT SUM(coef) FROM Matter;
